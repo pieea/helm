@@ -574,7 +574,8 @@ prometheus:
         prometheus: kube-prometheus
 
 ## Kubernetes Cluster Domain
-clusterDomain: cluster.local
+# clusterDomain: cluster.local
+clusterDomain: max-test2.k8s.9rum.cc
 
 ## Pod Disruption Budget
 podDisruptionBudget: {}
