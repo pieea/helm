@@ -9,14 +9,14 @@ entries:
       name: mysql
       repository: https://kubernetes-charts.storage.googleapis.com/
       version: 1.6.2
-      #    - condition: rabbitmq.enabled
-      # name: rabbitmq
-      # repository: https://kubernetes-charts.storage.googleapis.com/
-      # version: 6.16.6
-      # - condition: rabbitmq-ha.enabled
-      # name: rabbitmq-ha
-      # repository: https://kubernetes-charts.storage.googleapis.com/
-      # version: 1.38.2
+    - condition: rabbitmq.enabled
+      name: rabbitmq
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 6.16.6
+    - condition: rabbitmq-ha.enabled
+      name: rabbitmq-ha
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 1.38.2
     - condition: kafka.enabled
       name: kafka-manager
       repository: https://kubernetes-charts-incubator.storage.googleapis.com/
