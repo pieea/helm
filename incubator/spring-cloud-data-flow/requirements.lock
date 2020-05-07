@@ -7,7 +7,7 @@ dependencies:
   version: 6.18.2
 - name: rabbitmq-ha
   repository: https://kubernetes-charts.storage.googleapis.com/
-  version: 1.38.2
+  version: 1.44.2
 - name: kafka-manager
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 2.3.1
@@ -17,5 +17,5 @@ dependencies:
 - name: grafana
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 4.5.0
-digest: sha256:762f73f90f1435dea9d320ae91e95a6054638f166b236be00cdb812bc25a0a1c
-generated: "2020-05-07T16:52:24.928145+09:00"
+digest: sha256:acf1f4f658cd57987f2603ef957558c69b76b8d81881965b040d817e986e2a27
+generated: "2020-05-07T17:07:28.611602+09:00"
