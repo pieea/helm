@@ -1,7 +1,7 @@
 dependencies:
 - name: mysql
   repository: https://kubernetes-charts.storage.googleapis.com/
-  version: 1.6.2
+  version: 1.6.3
 - name: rabbitmq
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 6.16.6
@@ -17,5 +17,5 @@ dependencies:
 - name: grafana
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 4.5.0
-digest: sha256:74a9c4dce07028ac872e1de6ca8592e00af6172fe398952a1fc63a4fa6958ef0
-generated: "2020-05-07T15:27:02.844067+09:00"
+digest: sha256:3c890e6601320804d120a7799d577cbe4e4416ded7a678d955329c580db3f0e9
+generated: "2020-05-07T16:26:49.613162+09:00"
