@@ -9,10 +9,10 @@ entries:
       name: mysql
       repository: https://kubernetes-charts.storage.googleapis.com/
       version: 1.6.2
-    - condition: rabbitmq.enabled
-      name: rabbitmq
-      repository: https://kubernetes-charts.storage.googleapis.com/
-      version: 6.16.6
+      #    - condition: rabbitmq.enabled
+      # name: rabbitmq
+      # repository: https://kubernetes-charts.storage.googleapis.com/
+      # version: 6.16.6
     - condition: rabbitmq-ha.enabled
       name: rabbitmq-ha
       repository: https://kubernetes-charts.storage.googleapis.com/
@@ -45,6 +45,6 @@ entries:
     - https://github.com/spring-cloud/spring-cloud-dataflow
     - https://github.com/spring-cloud/spring-cloud-skipper
     urls:
-    - https://pieea.github.io/helm/spring-cloud-data-flow-2.6.0.tgz
+    - https://pages.github.kakaocorp.com/max-im/helm/spring-cloud-data-flow-2.6.0.tgz
     version: 2.6.0
 generated: "2020-05-06T19:10:32.229885+09:00"
