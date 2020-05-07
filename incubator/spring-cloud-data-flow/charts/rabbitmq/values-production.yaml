@@ -113,7 +113,8 @@ rabbitmq:
   ## Clustering settings
   clustering:
     address_type: hostname
-    k8s_domain: cluster.local
+    # k8s_domain: cluster.local
+    k8s_domain: max-test2.k8s.9rum.cc
     ## Rebalance master for queues in cluster when new replica is created
     ## ref: https://www.rabbitmq.com/rabbitmq-queues.8.html#rebalance
     rebalance: false
@@ -131,7 +132,8 @@ rabbitmq:
   configuration: |-
     ## Clustering
     cluster_formation.peer_discovery_backend  = rabbit_peer_discovery_k8s
-    cluster_formation.k8s.host = kubernetes.default.svc.cluster.local
+    #cluster_formation.k8s.host = kubernetes.default.svc.cluster.local
+    cluster_formation.k8s.host = kubernetes.default.svc.max-test2.k8s.9rum.cc
     cluster_formation.node_cleanup.interval = 10
     cluster_formation.node_cleanup.only_log_warning = true
     cluster_partition_handling = autoheal
