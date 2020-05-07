@@ -69,10 +69,6 @@ spec:
         - name: bootstrap
           image: {{ .Values.busyboxImage.repository}}:{{ .Values.busyboxImage.tag}}
           imagePullPolicy: {{ .Values.busyboxImage.pullPolicy }}
-          securityContext:
-            runAsGroup: 0
-            runAsNonRoot: false
-            runAsUser: 0
           command: ['sh']
           args:
           - "-c"
@@ -84,10 +80,6 @@ spec:
             if [ -d "${RABBITMQ_MNESIA_DIR}" ]; then
               touch "${RABBITMQ_MNESIA_DIR}/force_load"
             fi
-            {{- end }}
-            {{- if and (.Values.securityContext.runAsUser) (.Values.securityContext.fsGroup) }}
-            chown -R {{ .Values.securityContext.runAsUser }}:{{ .Values.securityContext.fsGroup }} /var/lib/rabbitmq/
-            chown -R {{ .Values.securityContext.runAsUser }}:{{ .Values.securityContext.fsGroup }} /etc/rabbitmq
             {{- end }}
           env:
           - name: POD_NAME
@@ -272,12 +264,6 @@ spec:
       {{- if .Values.schedulerName }}
       schedulerName: "{{ .Values.schedulerName }}"
       {{- end }}
-      {{- if .Values.affinity }}
-      affinity:
-      {{- with .Values.affinity }}
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- else }}
       {{- if eq .Values.podAntiAffinity "hard" }}
       affinity:
         podAntiAffinity:
@@ -299,8 +285,6 @@ spec:
                     app: {{ template "rabbitmq-ha.name" . }}
                     release: {{ .Release.Name }}
       {{- end }}
-      {{- end }}
-
       {{- if .Values.priorityClassName }}
       priorityClassName: {{ .Values.priorityClassName }}
       {{- end }}
@@ -330,9 +314,9 @@ spec:
     - metadata:
         name: {{ .Values.persistentVolume.name }}
         annotations:
-{{ tpl (toYaml .Values.persistentVolume.annotations) . | indent 10 }}
-        labels:
-{{ tpl (toYaml .Values.persistentVolume.labels) . | indent 10 }}
+        {{- range $key, $value := .Values.persistentVolume.annotations }}
+          {{ $key }}: {{ $value }}
+        {{- end }}
       spec:
         accessModes:
         {{- range .Values.persistentVolume.accessModes }}
@@ -347,10 +331,6 @@ spec:
       {{- else }}
         storageClassName: "{{ .Values.persistentVolume.storageClass }}"
       {{- end }}
-      {{- end }}
-      {{- with .Values.persistentVolume.selector }}
-        selector:
-          {{- toYaml . | nindent 10 }}
       {{- end }}
 {{- else }}
         - name: {{ .Values.persistentVolume.name }}

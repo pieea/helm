@@ -1,9 +1,9 @@
-name: rabbitmq-ha
 apiVersion: v1
 appVersion: 3.8.0
-version: 1.44.2
-description: Highly available RabbitMQ cluster, the open source message broker
-  software that implements the Advanced Message Queuing Protocol (AMQP).
+description: Highly available RabbitMQ cluster, the open source message broker software
+  that implements the Advanced Message Queuing Protocol (AMQP).
+home: https://www.rabbitmq.com
+icon: https://bitnami.com/assets/stacks/rabbitmq/img/rabbitmq-stack-220x234.png
 keywords:
 - rabbitmq
 - message queue
@@ -11,10 +11,10 @@ keywords:
 - AMQPS
 - MQTT
 - STOMP
-home: https://www.rabbitmq.com
-icon: https://bitnami.com/assets/stacks/rabbitmq/img/rabbitmq-stack-220x234.png
+maintainers:
+- name: steven-sheehy
+name: rabbitmq-ha
 sources:
 - https://github.com/rabbitmq/rabbitmq
 - https://github.com/docker-library/rabbitmq
-maintainers:
-- name: steven-sheehy
+version: 1.38.2
