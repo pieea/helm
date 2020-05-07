@@ -45,6 +45,6 @@ entries:
     - https://github.com/spring-cloud/spring-cloud-dataflow
     - https://github.com/spring-cloud/spring-cloud-skipper
     urls:
-    - https://pages.github.kakaocorp.com/max-im/helm/spring-cloud-data-flow-2.6.0.tgz
+    - https://pieea.github.io/helm/spring-cloud-data-flow-2.6.0.tgz
     version: 2.6.0
 generated: "2020-05-06T19:10:32.229885+09:00"
